@@ -1,3 +1,3 @@
 # Super Duper Gallery
 
-Remix Tailwind Starter Kit.
+Super Duper Gallery.

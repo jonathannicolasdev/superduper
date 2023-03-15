@@ -11,9 +11,9 @@ export const configSite = {
   domain: isDevelopment ? "localhost:3000" : "superdupergallery.com",
 
   name: "Super Duper Gallery",
-  title: "Super Duper Gallery: Remix Tailwind Starter Kit",
+  title: "Super Duper Gallery",
   description:
-    "Super Duper Gallery is a Remix stack with Tailwind CSS, Radix UI, and their ecosystem. Made by @jonathannicolasdev.",
+    "Super Duper Gallery is a contemporary art gallery based in 🇵🇭 QC, Philippines.",
 
   links: {
     website: "https://superdupergallery.com",

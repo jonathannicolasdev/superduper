@@ -1,7 +1,7 @@
 {
   "name": "superdupergallery",
+  "description": "Super Duper Gallery",
   "version": "0.1.0",
-  "description": "Remix Tailwind Starter Kit",
   "author": "Jonathan Nicolas",
   "homepage": "https://superdupergallery.com",
   "repository": "https://github.com/jonathannicolasdev/superdupergallery",
