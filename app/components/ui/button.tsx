@@ -41,7 +41,7 @@ export const buttonVariants = cva(
         blue: "text-blue-500",
       },
       radius: {
-        default: "rounded",
+        default: "rounded-sm",
         full: "rounded-full",
       },
       weight: {
@@ -68,47 +68,47 @@ export const buttonVariants = cva(
       {
         isIcon: false,
         size: "xs",
-        class: "h-5 px-1 sm:h-6 sm:px-2 rounded text-xs gap-1",
+        class: "h-5 px-1 sm:h-6 sm:px-2 rounded-sm text-xs gap-1",
       },
       {
         isIcon: false,
         size: "sm",
-        class: "h-7 px-2 sm:h-8 sm:px-3 rounded text-sm gap-2",
+        class: "h-7 px-2 sm:h-8 sm:px-3 rounded-sm text-sm gap-2",
       },
       {
         isIcon: false,
         size: "default",
-        class: "h-9 sm:h-10 px-3 sm:px-4 rounded-md gap-2",
+        class: "h-9 sm:h-10 px-3 sm:px-4 rounded-sm gap-2",
       },
       {
         isIcon: false,
         size: "lg",
-        class: "h-11 sm:h-12 px-4 sm:px-5 rounded-lg text-lg gap-3",
+        class: "h-11 sm:h-12 px-4 sm:px-5 rounded-sm text-lg gap-3",
       },
       {
         isIcon: true,
         size: "fixed",
-        class: "rounded-md h-10 w-10",
+        class: "rounded-sm h-10 w-10",
       },
       {
         isIcon: true,
         size: "xs",
-        class: "rounded h-5 w-5 sm:h-6 sm:w-6",
+        class: "rounded-sm h-5 w-5 sm:h-6 sm:w-6",
       },
       {
         isIcon: true,
         size: "sm",
-        class: "rounded h-7 w-7 sm:h-8 sm:w-8",
+        class: "rounded-sm h-7 w-7 sm:h-8 sm:w-8",
       },
       {
         isIcon: true,
         size: "default",
-        class: "rounded-md h-9 w-9 sm:h-10 sm:w-10",
+        class: "rounded-sm h-9 w-9 sm:h-10 sm:w-10",
       },
       {
         isIcon: true,
         size: "lg",
-        class: "rounded-lg h-11 w-11 sm:h-12 sm:w-12",
+        class: "rounded-sm h-11 w-11 sm:h-12 sm:w-12",
       },
     ],
     defaultVariants: {

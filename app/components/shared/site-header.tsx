@@ -82,7 +82,7 @@ export function NavigationMainItems({ navItems }: { navItems?: NavItem[] }) {
               className={({ isActive }) =>
                 cn(
                   "px-2 py-2",
-                  "flex items-center gap-2 rounded-md text-xs font-semibold transition-colors sm:text-sm",
+                  "flex items-center gap-2 rounded-sm text-xs font-semibold transition-colors sm:text-sm",
                   "hover:bg-surface-100 hover:dark:bg-surface-800",
                   isActive && "bg-surface-100 dark:bg-surface-800"
                 )
