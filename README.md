@@ -100,4 +100,3 @@ It is generally recommended to use a Git repository, because future commits will
 - [Why we use Tailwind CSS as our primary framework | Clean Commit](https://cleancommit.io/blog/why-we-use-tailwind-css-as-our-primary-framework)
 - [An Honest Look at Tailwind as an API for CSS | thoughtbot, inc.](https://thoughtbot.com/blog/an-honest-look-at-tailwind-as-an-api-for-css)
 - [Styling Best Practices I Use With Tailwind CSS | theodorusclarence.com](https://theodorusclarence.com/blog/tailwindcss-best-practice)
-- [Fix roperty does not exist on type 'never' in TypeScript | bobbyhadz](https://bobbyhadz.com/blog/typescript-property-does-not-exist-on-type-never)

@@ -22,7 +22,7 @@ export function Anchor({
       target="_blank"
       rel="noreferrer noopener"
       className={cn(
-        "min-h-tap min-w-tap cursor-pointer leading-[initial]",
+        "cursor-pointer leading-[initial]",
         !noIndicator && "after:content-['_↗']", // TODO: change to SVG
         className
       )}

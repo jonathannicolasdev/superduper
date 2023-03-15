@@ -12,7 +12,6 @@ import {
   FormSubmitButton,
   FormTextArea,
   Input,
-  ItemActionContextMenuDemo,
   Label,
   Layout,
   Logo,
@@ -63,7 +62,7 @@ export default function ExamplesRoute() {
     <Layout
       isSpaced
       pageHeader={
-        <PageHeader>
+        <PageHeader size="sm">
           <h2>Examples</h2>
           <p>Like a kitchen sink to see all the components.</p>
         </PageHeader>
@@ -78,7 +77,6 @@ export default function ExamplesRoute() {
         <ExampleButton />
         <ExampleButtonIcon />
         <ExampleToast />
-        <ExampleContextMenu />
       </div>
 
       <div className="stack-v">
@@ -112,9 +110,13 @@ export function ExampleLink() {
       <div className="stack-v">
         <h4>Anchor</h4>
         <div className="stack-h-center">
-          <Anchor href="http://example.com">Anchor without style</Anchor>
-          <AnchorText href="http://example.com">Anchor with style</AnchorText>
-          <ButtonAnchor size="xs" href="http://example.com">
+          <Anchor href="http://superdupergallery.com">
+            Anchor without style
+          </Anchor>
+          <AnchorText href="http://superdupergallery.com">
+            Anchor with style
+          </AnchorText>
+          <ButtonAnchor size="xs" href="http://superdupergallery.com">
             Button Anchor
           </ButtonAnchor>
         </div>
@@ -320,21 +322,6 @@ export function ExampleToast() {
   );
 }
 
-export function ExampleContextMenu() {
-  return (
-    <section id="example-context-menu" className="card space-y-8">
-      <h3>Context Menu</h3>
-
-      <div className="stack-v">
-        <h4>Demo</h4>
-        <div className="stack-h-center">
-          <ItemActionContextMenuDemo />
-        </div>
-      </div>
-    </section>
-  );
-}
-
 export function ExampleBlank() {
   return (
     <section id="example-blank" className="card space-y-8">
@@ -364,7 +351,7 @@ export function ExampleForm() {
             <Input
               type="email"
               id="example-email"
-              placeholder="name@example.com"
+              placeholder="name@superdupergallery.com"
             />
             <p className="text-sm text-surface-500">
               Enter your email address.

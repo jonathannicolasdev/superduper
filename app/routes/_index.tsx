@@ -1,6 +1,6 @@
-import { ButtonAnchor, ButtonLink, LandingImage, Layout } from "~/components";
+import { ButtonAnchor, ButtonLink, Layout } from "~/components";
 import { configSite } from "~/configs";
-import { Github, Svg3DSelectFace } from "~/icons";
+import { Artworks, Instagram } from "~/icons";
 import { createDocumentLinks, createSitemap } from "~/utils";
 
 import type { LinksFunction } from "@remix-run/node";
@@ -18,36 +18,27 @@ export default function IndexRoute() {
         data-id="landing-hero"
         className="mx-auto flex max-w-max flex-wrap items-center justify-center gap-4 py-10 lg:justify-between lg:py-20"
       >
-        <div className="max-w-2xl space-y-4">
+        <div className="max-w-2xl space-y-4 text-center">
           <div className="prose-config sm:prose-xl">
-            <h1>Super Duper Gallery, a Remix Stack </h1>
-            <p>👋 Hey, it's just another web app starter kit.</p>
-            <p>
-              💿 Super Duper Gallery is a Remix Tailwind Stack with Tailwind CSS family of
-              libraries, React components, and the JavaScript/TypeScript/Node.js
-              ecosystem. Including other tech stack such as React, Headless UI,
-              Radix UI, Prisma ORM, PlanetScale, Vercel, and more.
-            </p>
+            <h1>Super Duper Gallery</h1>
+            <p>Super Duper Gallery Offers a Portal Further Beyond</p>
+            <p>Contemporary Art Gallery based in 🇵🇭 QC, Philippines</p>
           </div>
-          <div className="stack-h">
-            <ButtonLink to="/examples" size="lg">
-              <Svg3DSelectFace />
-              <span>Examples</span>
+          <div className="stack justify-center">
+            <ButtonLink to="/artworks" size="lg">
+              <Artworks />
+              <span>Artworks</span>
             </ButtonLink>
             <ButtonAnchor
-              href={configSite?.links.github}
+              href={configSite?.links.instagram}
               size="lg"
               variant="outline"
             >
-              <Github />
-              <span>GitHub</span>
+              <Instagram />
+              <span>Instagram</span>
             </ButtonAnchor>
           </div>
         </div>
-
-        <aside>
-          <LandingImage />
-        </aside>
       </section>
     </Layout>
   );

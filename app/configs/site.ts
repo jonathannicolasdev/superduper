@@ -16,23 +16,25 @@ export const configSite = {
     "Super Duper Gallery is a Remix stack with Tailwind CSS, Radix UI, and their ecosystem. Made by @jonathannicolasdev.",
 
   links: {
-    website: "https://example.com",
-    github: "https://github.com/jonathannicolasdev/superdupergallery",
-    twitter: "https://twitter.com/jonathannicolasdev",
-    youtube: "https://youtube.com/jonathannicolasdev",
+    website: "https://superdupergallery.com",
+    github: "https://github.com/jonathannicolasdev/superduper",
+    twitter: "https://twitter.com/superdupergallery",
+    facebook: "https://facebook.com/superdupergallery",
+    instagram: "https://instagram.com/superdupergallery",
   },
 
   twitter: {
-    site: "@jonathannicolasdev",
-    creator: "@jonathannicolasdev",
+    site: "@superdupergallery",
+    creator: "@jonathannicolas",
   },
 
   mainNavItems: [
     { to: "/", title: "Home", icon: "home" },
     { to: "/about", title: "About", icon: "about" },
+    { to: "/artworks", title: "Artworks", icon: "artworks" },
+    { to: "/artists", title: "Artists", icon: "artists" },
+    { to: "/shows", title: "Shows", icon: "shows" },
     { to: "/examples", title: "Examples", icon: "examples" },
-    { to: "/demo", title: "Demo", icon: "demo" },
-    { to: "/database", title: "Database", icon: "database" },
   ],
 };
 
@@ -57,13 +59,13 @@ export const configMeta = {
   fbAppId: "",
 
   author: {
-    name: "Jonathan Nicolas",
+    name: "Super Duper Gallery",
     handle: "@jonathannicolasdev",
     url: "https://jonathannicolasdev.com",
     company: {
-      name: "Catamyst",
-      handle: "@catamyst",
-      url: "https://catamyst.com",
+      name: "Super Duper Gallery",
+      handle: "@superdupergallery",
+      url: "https://superdupergallery.com",
     },
   },
 

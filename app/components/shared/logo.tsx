@@ -15,7 +15,7 @@ export const logoVariants = cva("flex items-center font-semibold font-brand", {
     },
     accent: {
       default: "text-black dark:text-white",
-      brand: "text-brand-600",
+      brand: "text-black dark:text-brand-100",
       muted: "grayscale text-surface-600 dark:text-surface-100",
     },
   },
@@ -28,10 +28,10 @@ export const logoVariants = cva("flex items-center font-semibold font-brand", {
 export const logoImageVariants = cva("", {
   variants: {
     size: {
-      xs: "size-xs",
-      sm: "size-sm",
-      default: "size-md",
-      lg: "size-lg",
+      xs: "h-6 w-6",
+      sm: "h-7 w-7",
+      default: "h-8 w-8",
+      lg: "h-9 w-9",
     },
   },
   defaultVariants: {

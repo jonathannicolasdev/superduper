@@ -5,6 +5,6 @@ type SeedUser = Pick<User, "name" | "email">;
 export const dataUsers: SeedUser[] = [
   {
     name: "Regular User",
-    email: "user@example.com",
+    email: "user@superdupergallery.com",
   },
 ];

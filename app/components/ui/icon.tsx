@@ -5,6 +5,9 @@ import {
   InfoEmpty,
   LayoutLeft,
   Svg3DSelectFace,
+  Artworks,
+  Artists,
+  Shows,
 } from "~/icons";
 
 /**
@@ -21,6 +24,11 @@ export const iconMaps = {
   default: <Circle />,
   demo: <LayoutLeft />,
   examples: <Svg3DSelectFace />,
+
+  artworks: <Artworks />,
+  artists: <Artists />,
+  shows: <Shows />,
+  exhibitions: <Shows />,
 };
 
 export function lookupIcon(lookupObject: any, defaultCase = "default") {

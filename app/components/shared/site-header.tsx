@@ -2,7 +2,6 @@
 import {
   ButtonIcon,
   ButtonIconAnchor,
-  ButtonLink,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
@@ -15,7 +14,7 @@ import {
 } from "~/components";
 import { ThemeToggleButton } from "~/components";
 import { configSite } from "~/configs";
-import { Github, Menu, Twitter } from "~/icons";
+import { Instagram, Menu } from "~/icons";
 import { cn } from "~/utils";
 
 import type { NavItem } from "~/configs";
@@ -108,41 +107,13 @@ export function NavigationButtons({
     <div className="flex flex-1 items-center justify-end space-x-2">
       <nav className="hidden gap-1 md:flex">
         <ButtonIconAnchor
-          href={configSite?.links.github}
+          href={configSite?.links.instagram}
           variant="ghost"
           accent="surface"
         >
-          <Github />
-          <span className="sr-only">GitHub</span>
+          <Instagram />
+          <span className="sr-only">Instagram</span>
         </ButtonIconAnchor>
-        <ButtonIconAnchor
-          href={configSite?.links.twitter}
-          variant="ghost"
-          accent="surface"
-        >
-          <Twitter />
-          <span className="sr-only">Twitter</span>
-        </ButtonIconAnchor>
-      </nav>
-
-      <nav className="flex items-center gap-1">
-        {!isAuthenticated && (
-          <>
-            <ButtonLink variant="ghost" to="/login" className="hidden md:flex">
-              Login
-            </ButtonLink>
-            <ButtonLink variant="subtle" to="/register" className="flex">
-              Register
-            </ButtonLink>
-          </>
-        )}
-        {isAuthenticated && (
-          <>
-            <ButtonLink variant="outline" to="/user" className="flex">
-              User
-            </ButtonLink>
-          </>
-        )}
       </nav>
     </div>
   );

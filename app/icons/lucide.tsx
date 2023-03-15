@@ -47,6 +47,10 @@ export {
   UserPlus,
   Users,
   MousePointerClick,
+  Instagram,
+  FileImage as Artworks,
+  PersonStanding as Artists,
+  PartyPopper as Shows,
   X,
 } from "lucide-react";
 export type { Icon as LucideIcon, LucideProps } from "lucide-react";
