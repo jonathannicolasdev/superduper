@@ -465,7 +465,7 @@ export function MusicPlayer() {
                       </TabsTrigger>
                     </TabsList>
                     <div className="ml-auto mr-4">
-                      <h3 className="text-xl">Welcome back, Haidar</h3>
+                      <h3 className="text-xl">Welcome back, Jonathan</h3>
                     </div>
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
@@ -475,8 +475,8 @@ export function MusicPlayer() {
                         >
                           <Avatar>
                             <AvatarImage
-                              src="https://github.com/mhaidarhanif.png"
-                              alt="M Haidar Hanif"
+                              src="https://github.com/jonathannicolasdev.png"
+                              alt="Jonathan Nicolas"
                             />
                             <AvatarFallback>MH</AvatarFallback>
                           </Avatar>
@@ -488,7 +488,7 @@ export function MusicPlayer() {
                         align="end"
                         forceMount
                       >
-                        <DropdownMenuLabel>M Haidar Hanif</DropdownMenuLabel>
+                        <DropdownMenuLabel>Jonathan Nicolas</DropdownMenuLabel>
                         <DropdownMenuSeparator />
                         <DropdownMenuGroup>
                           <DropdownMenuItem>

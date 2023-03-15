@@ -1,29 +1,29 @@
 {
-  "Rewinds Console": {
+  "Super Duper Gallery Console": {
     "prefix": "c",
     "body": ["console.log({ $1 });"],
     "description": "Console log"
   },
 
-  "Rewinds Console Log": {
+  "Super Duper Gallery Console Log": {
     "prefix": "cl",
     "body": ["console.log({ $1 });"],
     "description": "Console log"
   },
 
-  "Rewinds Console Info": {
+  "Super Duper Gallery Console Info": {
     "prefix": "ci",
     "body": ["console.info({ $1 });"],
     "description": "Console info"
   },
 
-  "Rewinds React Component": {
+  "Super Duper Gallery React Component": {
     "prefix": "rwc",
     "body": ["export const $1 = () => {", "  return <div>$1</div>;", "};", ""],
     "description": "React component"
   },
 
-  "Rewinds React PropTypes": {
+  "Super Duper Gallery React PropTypes": {
     "prefix": "rwp",
     "body": [
       "$1.propTypes = {",
@@ -38,7 +38,7 @@
     "description": "React component"
   },
 
-  "Rewinds Remix Route": {
+  "Super Duper Gallery Remix Route": {
     "prefix": "rwr",
     "body": [
       "import { Layout } from \"~/layouts\";",
@@ -57,7 +57,7 @@
     "description": "Remix route to render the component that matches the given route path."
   },
 
-  "Rewinds Remix Loader": {
+  "Super Duper Gallery Remix Loader": {
     "prefix": "rwl",
     "body": [
       "import { json } from \"~/libs\";",
@@ -72,7 +72,7 @@
     "description": "Remix loader function called on server side before rendering to provide data to the route."
   },
 
-  "Rewinds Remix Loader Session": {
+  "Super Duper Gallery Remix Loader Session": {
     "prefix": "rwls",
     "body": [
       "import { commitSession, getSession } from \"~/features\";",
@@ -94,7 +94,7 @@
     "description": "Function called on server side before rendering to provide data to the route."
   },
 
-  "Rewinds Remix Loader Function Params": {
+  "Super Duper Gallery Remix Loader Function Params": {
     "prefix": "remix-loader-params",
     "body": [
       "export const loader: LoaderFunction = async ({ request }) => {",
@@ -107,7 +107,7 @@
     "description": "Function called on server side before rendering to provide data to the route."
   },
 
-  "Rewinds Remix Action Function": {
+  "Super Duper Gallery Remix Action Function": {
     "prefix": "remix-action",
     "body": [
       "export const action: ActionFunction = async ({ request }) => {",
@@ -119,7 +119,7 @@
     "description": "Function called on server side to handle data mutation and other actions."
   },
 
-  "Rewinds Remix Headers": {
+  "Super Duper Gallery Remix Headers": {
     "prefix": "remix-headers",
     "body": [
       "export const headers = ({ loaderHeaders, parentHeaders }) => {",
@@ -131,7 +131,7 @@
     "description": "Function to define headers by route."
   },
 
-  "Rewinds Remix Meta": {
+  "Super Duper Gallery Remix Meta": {
     "prefix": "rwm",
     "description": "Function to define meta tags by route.",
     "body": [
@@ -144,7 +144,7 @@
     ]
   },
 
-  "Rewinds Remix Links": {
+  "Super Duper Gallery Remix Links": {
     "prefix": "rwl",
     "body": [
       "export const links: LinksFunction = () => {",
@@ -156,7 +156,7 @@
     "description": "Function to define links by route."
   },
 
-  "Rewinds Remix CatchBoundary": {
+  "Super Duper Gallery Remix CatchBoundary": {
     "prefix": "rwcb",
     "body": [
       "export function CatchBoundary() {",
@@ -176,7 +176,7 @@
     "description": "React component that renders whenever an action or loader throws a Response."
   },
 
-  "Rewinds Remix ErrorBoundary": {
+  "Super Duper Gallery Remix ErrorBoundary": {
     "prefix": "rweb",
     "body": [
       "export function ErrorBoundary({ error }: { error: Error }) {",
@@ -193,13 +193,13 @@
     "description": "React component that renders whenever there is an error anywhere on the route, either during rendering or during data loading."
   },
 
-  "Rewinds Remix Handle": {
+  "Super Duper Gallery Remix Handle": {
     "prefix": "remix-handle",
     "body": ["export const handle = {", "  $1", "};"],
     "description": "handle allows you to create application conventions with the useMatches() hook."
   },
 
-  "Rewinds Remix SEO Handle": {
+  "Super Duper Gallery Remix SEO Handle": {
     "prefix": "rwseo",
     "body": [
       "export const handle: SEOHandle = {",
@@ -212,7 +212,7 @@
     "description": "SEO handle to be used with sitemap.xml file"
   },
 
-  "Rewinds Remix Session": {
+  "Super Duper Gallery Remix Session": {
     "prefix": "remix-session",
     "body": [
       "import { createCookieSessionStorage } from \"remix\";",
@@ -244,13 +244,13 @@
     "description": "Creates a cookie session storage template."
   },
 
-  "Rewinds Remix Link": {
+  "Super Duper Gallery Remix Link": {
     "prefix": "remix-a-link",
     "body": ["<Link prefetch=\"${1|none,intent,render|}\" to={`$2`}>$3</Link>"],
     "description": "Remix Link component that renders an anchor tag for navigation."
   },
 
-  "Rewinds Remix Pending Link": {
+  "Super Duper Gallery Remix Pending Link": {
     "prefix": "remix-a-link-pending",
     "body": [
       "function PendingLink({ to, children }: { to: string; children: any }) {",
@@ -273,7 +273,7 @@
     "description": "Pending link component."
   },
 
-  "Rewinds Remix Button Navigation": {
+  "Super Duper Gallery Remix Button Navigation": {
     "prefix": "remix-btn-navigation",
     "body": [
       "function SubmitButton() {",
@@ -292,7 +292,7 @@
     "description": "Navigation submit button."
   },
 
-  "Rewinds Remix Button Navigation Action": {
+  "Super Duper Gallery Remix Button Navigation Action": {
     "prefix": "remix-btn-navigation-action",
     "body": [
       "function SubmitButton() {",

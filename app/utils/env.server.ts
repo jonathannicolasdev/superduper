@@ -16,16 +16,10 @@ export function getEnv(request: Request) {
     // REMIX variables are mostly private
 
     IMAGEKIT_URL_ENDPOINT: process.env.IMAGEKIT_URL_ENDPOINT,
-    IMAGEKIT_FOLDER_NAME: process.env.IMAGEKIT_FOLDER_NAME,
     IMAGEKIT_PUBLIC_KEY: process.env.IMAGEKIT_PUBLIC_KEY,
     IMAGEKIT_PRIVATE_KEY: process.env.IMAGEKIT_PRIVATE_KEY,
 
-    MAPBOX_PUBLIC_TOKEN: process.env.MAPBOX_PUBLIC_TOKEN,
-
     GA_MEASUREMENT_ID: process.env.GA_MEASUREMENT_ID,
-    SENTRY_BROWSER_DSN: process.env.SENTRY_BROWSER_DSN,
-    POSTHOG_API_HOST: process.env.POSTHOG_API_HOST,
-    POSTHOG_API_KEY: process.env.POSTHOG_API_KEY,
   };
 }
 

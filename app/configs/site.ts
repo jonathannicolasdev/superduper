@@ -8,23 +8,23 @@ const isDevelopment = process.env.NODE_ENV === "development";
 
 // For general
 export const configSite = {
-  domain: isDevelopment ? "localhost:3000" : "rewinds.mhaidarhanif.com",
+  domain: isDevelopment ? "localhost:3000" : "superdupergallery.com",
 
-  name: "Rewinds",
-  title: "Rewinds: Remix Tailwind Starter Kit",
+  name: "Super Duper Gallery",
+  title: "Super Duper Gallery: Remix Tailwind Starter Kit",
   description:
-    "Rewinds is a Remix stack with Tailwind CSS, Radix UI, and their ecosystem. Made by @mhaidarhanif.",
+    "Super Duper Gallery is a Remix stack with Tailwind CSS, Radix UI, and their ecosystem. Made by @jonathannicolasdev.",
 
   links: {
     website: "https://example.com",
-    github: "https://github.com/mhaidarhanif/rewinds",
-    twitter: "https://twitter.com/mhaidarhanif",
-    youtube: "https://youtube.com/mhaidarhanif",
+    github: "https://github.com/jonathannicolasdev/superdupergallery",
+    twitter: "https://twitter.com/jonathannicolasdev",
+    youtube: "https://youtube.com/jonathannicolasdev",
   },
 
   twitter: {
-    site: "@mhaidarhanif",
-    creator: "@mhaidarhanif",
+    site: "@jonathannicolasdev",
+    creator: "@jonathannicolasdev",
   },
 
   mainNavItems: [
@@ -52,14 +52,14 @@ export const configMeta = {
   ogType: "website",
   ogImageAlt: configSite?.title,
   ogImageType: "image/png",
-  ogImagePath: "/assets/opengraph/rewinds-og.png",
-  twitterImagePath: "/assets/opengraph/rewinds-og.png",
+  ogImagePath: "/assets/opengraph/superdupergallery-og.png",
+  twitterImagePath: "/assets/opengraph/superdupergallery-og.png",
   fbAppId: "",
 
   author: {
-    name: "M Haidar Hanif",
-    handle: "@mhaidarhanif",
-    url: "https://mhaidarhanif.com",
+    name: "Jonathan Nicolas",
+    handle: "@jonathannicolasdev",
+    url: "https://jonathannicolasdev.com",
     company: {
       name: "Catamyst",
       handle: "@catamyst",

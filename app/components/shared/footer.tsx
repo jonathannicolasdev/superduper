@@ -19,7 +19,7 @@ export function SiteFooter({ noThemeToggle }: Props) {
           <li>
             <span>Repo: </span>
             <AnchorText href={configSite?.links.github}>
-              <TextCode>mhaidarhanif/rewinds</TextCode>
+              <TextCode>jonathannicolasdev/superdupergallery</TextCode>
             </AnchorText>
           </li>
           <li>

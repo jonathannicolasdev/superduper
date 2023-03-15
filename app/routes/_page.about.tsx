@@ -28,21 +28,26 @@ export default function AboutRoute() {
     <Layout className="space-y-20">
       <article data-id="about-content" className="prose-config mx-auto mt-10">
         <h1>
-          <Balancer>About the Remix starter kit called Rewinds</Balancer>
+          <Balancer>
+            About the Remix starter kit called Super Duper Gallery
+          </Balancer>
         </h1>
         <p>
           The about page is to showcase the prose styles from Tailwind CSS
           Typography. This template is originally made by{" "}
-          <Anchor href="https://mhaidarhanif.com">M Haidar Hanif</Anchor> in
-          conjunction with <Anchor href="https://catamyst.com">Catamyst</Anchor>{" "}
-          and its tech stack for various projects.
+          <Anchor href="https://jonathannicolasdev.com">
+            Jonathan Nicolas
+          </Anchor>{" "}
+          in conjunction with{" "}
+          <Anchor href="https://catamyst.com">Catamyst</Anchor> and its tech
+          stack for various projects.
         </p>
         <p>
-          As informed in the landing page, Rewinds is a Remix Tailwind Stack
-          with Tailwind CSS family of libraries, interactive components, and the
-          TypeScript ecosystem. Compared to the{" "}
-          <Anchor href="https://github.com/mhaidarhanif/rewinds-legacy">
-            the older <code>rewinds</code>
+          As informed in the landing page, Super Duper Gallery is a Remix
+          Tailwind Stack with Tailwind CSS family of libraries, interactive
+          components, and the TypeScript ecosystem. Compared to the{" "}
+          <Anchor href="https://github.com/jonathannicolasdev/superdupergallery-legacy">
+            the older <code>superdupergallery</code>
           </Anchor>{" "}
           this newer version uses{" "}
           <Anchor href="https://github.com/shadcn/ui">
@@ -115,7 +120,7 @@ export default function AboutRoute() {
           delectus porro rerum tempora, cumque vero, reprehenderit, fugit
           eligendi minus mollitia sint.
         </p>
-        <p>Alright, this should be it! Let's use Rewinds.</p>
+        <p>Alright, this should be it! Let's use Super Duper Gallery.</p>
       </article>
 
       <PageProgress />

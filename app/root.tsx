@@ -158,12 +158,12 @@ export function ErrorBoundary({ error }: { error: Error }) {
         isSpaced
         pageHeader={
           <PageHeader size="sm">
-            <h2>Error from Rewinds: {error.message}</h2>
+            <h2>Error from Super Duper Gallery: {error.message}</h2>
           </PageHeader>
         }
       >
         <div>
-          <p>Here's the error information that can be informed to Rewinds.</p>
+          <p>Here's the error information that can be informed to Super Duper Gallery.</p>
           <Debug>{error}</Debug>
         </div>
       </Layout>
@@ -201,7 +201,7 @@ export function CatchBoundary() {
         }
       >
         <div>
-          <p>Here's the error information that can be informed to Rewinds.</p>
+          <p>Here's the error information that can be informed to Super Duper Gallery.</p>
           <Debug>{caught}</Debug>
         </div>
       </Layout>

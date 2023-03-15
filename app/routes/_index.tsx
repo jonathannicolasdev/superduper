@@ -20,10 +20,10 @@ export default function IndexRoute() {
       >
         <div className="max-w-2xl space-y-4">
           <div className="prose-config sm:prose-xl">
-            <h1>Rewinds, a Remix Stack </h1>
+            <h1>Super Duper Gallery, a Remix Stack </h1>
             <p>👋 Hey, it's just another web app starter kit.</p>
             <p>
-              💿 Rewinds is a Remix Tailwind Stack with Tailwind CSS family of
+              💿 Super Duper Gallery is a Remix Tailwind Stack with Tailwind CSS family of
               libraries, React components, and the JavaScript/TypeScript/Node.js
               ecosystem. Including other tech stack such as React, Headless UI,
               Radix UI, Prisma ORM, PlanetScale, Vercel, and more.

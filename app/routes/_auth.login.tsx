@@ -90,7 +90,7 @@ export default function LoginRoute() {
       pageHeader={
         <PageHeader size="sm" isTextCentered>
           <h2>Login to continue</h2>
-          <p>Use your Rewinds account</p>
+          <p>Use your Super Duper Gallery account</p>
         </PageHeader>
       }
     >

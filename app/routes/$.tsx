@@ -16,7 +16,7 @@ export default function SplatRoute() {
         </PageHeader>
       }
     >
-      <p>You might want to inform Rewinds.</p>
+      <p>You might want to inform Super Duper Gallery.</p>
     </Layout>
   );
 }

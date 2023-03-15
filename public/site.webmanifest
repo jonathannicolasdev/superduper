@@ -1,8 +1,8 @@
 {
-  "name": "Rewinds",
-  "short_name": "Rewinds",
+  "name": "Super Duper Gallery",
+  "short_name": "Super Duper Gallery",
   "description": "Remix Tailwind Starter Kit",
-  "start_url": "https://rewinds.mhaidarhanif.com",
+  "start_url": "https://superdupergallery.com",
   "icons": [
     {
       "src": "/favicons/android-chrome-192x192.png",

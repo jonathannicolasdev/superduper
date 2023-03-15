@@ -1,11 +1,11 @@
 {
-  "name": "rewinds",
+  "name": "superdupergallery",
   "version": "0.1.0",
   "description": "Remix Tailwind Starter Kit",
-  "author": "M Haidar Hanif",
-  "homepage": "https://rewinds.mhaidarhanif.com",
-  "repository": "https://github.com/mhaidarhanif/rewinds",
-  "bugs": "https://github.com/mhaidarhanif/rewinds/issues",
+  "author": "Jonathan Nicolas",
+  "homepage": "https://superdupergallery.com",
+  "repository": "https://github.com/jonathannicolasdev/superdupergallery",
+  "bugs": "https://github.com/jonathannicolasdev/superdupergallery/issues",
   "private": true,
   "sideEffects": false,
   "scripts": {
