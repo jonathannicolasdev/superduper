@@ -1,6 +1,7 @@
 *.cjs
 *.js
 /api
+/app/_old-routes
 /app/styles/global.css
 /build/
 /node_modules
