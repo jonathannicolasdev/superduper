@@ -31,7 +31,10 @@ model User {
   notifications UserNotification[]
   roleId        String?
   role          UserRole?          @relation(fields: [roleId], references: [id])
-  notes         Note[]
+
+  notes    Note[]
+  artworks Artwork[]
+  Artist   Artist[]
 
   @@index([roleId])
 }
@@ -48,23 +51,6 @@ model UserPassword {
 
   @@index([userId])
 }
-
-model UserProfile {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  userId    Int      @unique
-
-  avatarImageURL String?
-  headline       String?
-  bio            String?
-
-  @@index([userId])
-}
-
-// -----------------------------------------------------------------------------
-// User Data
-// -----------------------------------------------------------------------------
 
 model UserRole {
   id        String   @id @default(cuid())
@@ -100,6 +86,39 @@ model Note {
 
   title String
   body  String
+
+  @@index([userId])
+}
+
+model Artwork {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  artistId  String?
+  artist    Artist?  @relation(fields: [artistId], references: [id])
+
+  title  String
+  date   DateTime
+  medium String // canvas, acrylic
+  size   String // width, height, length
+
+  @@index([userId])
+  @@index([artistId])
+}
+
+model Artist {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+
+  name String
+  bio  String
+
+  artworks Artwork[]
 
   @@index([userId])
 }
