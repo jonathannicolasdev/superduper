@@ -163,7 +163,10 @@ export function ErrorBoundary({ error }: { error: Error }) {
         }
       >
         <div>
-          <p>Here's the error information that can be informed to Super Duper Gallery.</p>
+          <p>
+            Here's the error information that can be informed to Super Duper
+            Gallery.
+          </p>
           <Debug>{error}</Debug>
         </div>
       </Layout>
@@ -201,7 +204,10 @@ export function CatchBoundary() {
         }
       >
         <div>
-          <p>Here's the error information that can be informed to Super Duper Gallery.</p>
+          <p>
+            Here's the error information that can be informed to Super Duper
+            Gallery.
+          </p>
           <Debug>{caught}</Debug>
         </div>
       </Layout>

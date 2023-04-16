@@ -18,7 +18,11 @@ export const links: LinksFunction = () => {
 };
 
 export async function loader() {
-  const artworks = await prisma.artwork.findMany();
+  const artworks = await prisma.artwork.findMany({
+    include: {
+      artist: true
+    }
+  });
   return json({ artworks });
 }
 
@@ -34,8 +38,16 @@ export default function ArtworksRoute() {
         </PageHeader>
       }
     >
-      <p>Change something here.</p>
-      <pre>{JSON.stringify(artworks, null, 2)}</pre>
+      <ul>
+        {artworks.map((artwork) => {
+          return (
+            <li key={artwork.id}>
+              <h3>{artwork.title}</h3>
+              {artwork.artist?.name && <h4>{artwork.artist.name}</h4>}
+            </li>
+          );
+        })}
+      </ul>
     </Layout>
   );
 }
