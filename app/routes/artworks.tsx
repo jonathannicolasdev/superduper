@@ -2,9 +2,14 @@ import type { LinksFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 
-import { Layout, PageHeader } from "~/components";
+import { ButtonLink, Layout, PageHeader } from "~/components";
 import { prisma } from "~/libs";
-import { createDocumentLinks, createMetaData, createSitemap } from "~/utils";
+import {
+  createDocumentLinks,
+  createMetaData,
+  createSitemap,
+  formatDateOnly,
+} from "~/utils";
 
 export const meta = createMetaData({
   title: "Artworks",
@@ -20,8 +25,8 @@ export const links: LinksFunction = () => {
 export async function loader() {
   const artworks = await prisma.artwork.findMany({
     include: {
-      artist: true
-    }
+      artist: true,
+    },
   });
   return json({ artworks });
 }
@@ -41,9 +46,17 @@ export default function ArtworksRoute() {
       <ul>
         {artworks.map((artwork) => {
           return (
-            <li key={artwork.id}>
+            <li key={artwork.id} className="space-y-2 max-w-[200px]">
               <h3>{artwork.title}</h3>
               {artwork.artist?.name && <h4>{artwork.artist.name}</h4>}
+              <time>{formatDateOnly(artwork.date)}</time>
+              <ButtonLink
+                to={`/artworks/${artwork.id}`}
+                variant="outline"
+                className="after:content-['_↗']"
+              >
+                Details
+              </ButtonLink>
             </li>
           );
         })}

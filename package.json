@@ -28,8 +28,8 @@
     "eslint:fix": "eslint . --fix",
     "stylelint": "stylelint ./app/styles/*.css",
     "stylelint:fix": "stylelint --fix ./app/styles/*.css",
-    "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
-    "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
+    "prettier:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
+    "prettier": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
     "clean": "rm -rf build public/build",
     "postinstall": "nr clean && nr prisma:generate"
   },

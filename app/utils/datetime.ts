@@ -21,7 +21,7 @@ export const formatDate = (date: string | Date | undefined) => {
   return formatted;
 };
 export const formatDateOnly = (date: string | Date | undefined) => {
-  const formatted = dayjs(date).locale("en").format("D MMM YYYY");
+  const formatted = dayjs(date).locale("en").format("MMMM D, YYYY");
   return formatted;
 };
 
