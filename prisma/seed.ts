@@ -30,7 +30,7 @@ export async function seedUsers() {
   });
 
   // ---------------------------------------------------------------------------
-  console.info("Seed users...");
+  console.info("👤 Seed users...");
   await prisma.user.deleteMany();
 
   const { REMIX_ADMIN_EMAIL, REMIX_ADMIN_PASSWORD } = process.env;
@@ -49,13 +49,29 @@ export async function seedUsers() {
   });
 
   // ---------------------------------------------------------------------------
-  console.info("Seed notes...");
+  console.info("🎨 Seed artworks...");
 
-  await prisma.note.create({
-    data: { title: "My 1st title", body: "The 1st body", userId: user.id },
-  });
-  await prisma.note.create({
-    data: { title: "My 2nd title", body: "The 2nd body", userId: user.id },
+  await prisma.artwork.createMany({
+    data: [
+      {
+        title: "An Example",
+        date: "2023-01-01",
+        medium: "Example Medium",
+        size: "10 x 10 x 10"
+      },
+      {
+        title: "Be An Example",
+        date: "2023-02-02",
+        medium: "Example Medium",
+        size: "20 x 20 x 20"
+      },
+      {
+        title: "Be An Example",
+        date: "2023-02-02",
+        medium: "Example Medium",
+        size: "20 x 20 x 20"
+      }
+    ],
   });
 }
 

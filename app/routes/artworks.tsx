@@ -43,10 +43,15 @@ export default function ArtworksRoute() {
         </PageHeader>
       }
     >
-      <ul>
+      <ul className="flex flex-wrap items-center">
         {artworks.map((artwork) => {
           return (
-            <li key={artwork.id} className="space-y-2 max-w-[200px]">
+            <li key={artwork.id} className="max-w-[200px] space-y-2">
+              <img
+                src="https://picsum.photos/seed/picsum/200/300"
+                alt={artwork.title}
+              />
+
               <h3>{artwork.title}</h3>
               {artwork.artist?.name && <h4>{artwork.artist.name}</h4>}
               <time>{formatDateOnly(artwork.date)}</time>
