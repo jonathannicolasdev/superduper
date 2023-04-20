@@ -94,12 +94,14 @@ model Artwork {
   id        String   @id @default(cuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
   userId    String?
   user      User?    @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   artistId  String?
   artist    Artist?  @relation(fields: [artistId], references: [id])
 
   title  String
+  slug   String?
   date   DateTime
   medium String // canvas, acrylic
   size   String // width, height, length

@@ -56,7 +56,7 @@ export default function ArtworksRoute() {
               {artwork.artist?.name && <h4>{artwork.artist.name}</h4>}
               <time>{formatDateOnly(artwork.date)}</time>
               <ButtonLink
-                to={`/artworks/${artwork.id}`}
+                to={`/artworks/${artwork?.slug}`}
                 variant="outline"
                 className="after:content-['_↗']"
               >
