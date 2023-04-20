@@ -35,7 +35,7 @@ export async function action({ request }: ActionArgs) {
   const formData = await request.formData();
   const email = formData.get("email");
   const password = formData.get("password");
-  const redirectTo = "/notes";
+  const redirectTo = "/";
   const remember = formData.get("remember");
 
   if (typeof password !== "string" || password.length === 0) {

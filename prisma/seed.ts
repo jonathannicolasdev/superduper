@@ -6,9 +6,11 @@ import bcrypt from "bcryptjs";
 
 import { dataUserRoles } from "~/data";
 import { prisma } from "~/libs";
+import { dataArtists } from "./data/artists";
+import { dataArtworks } from "./data/artworks";
 
 async function seed() {
-  await seedUsers();
+  await seedData();
 }
 
 /**
@@ -17,7 +19,7 @@ async function seed() {
  * -----------------------------------------------------------------------------
  */
 
-export async function seedUsers() {
+export async function seedData() {
   // ---------------------------------------------------------------------------
   console.info("Seed user roles...");
   await prisma.userRole.deleteMany();
@@ -49,29 +51,30 @@ export async function seedUsers() {
   });
 
   // ---------------------------------------------------------------------------
+  console.info("🎨 Seed artists...");
+  await prisma.artist.deleteMany();
+
+  await prisma.artist.createMany({
+    data: dataArtists
+  });
+
+  // ---------------------------------------------------------------------------
   console.info("🎨 Seed artworks...");
+  await prisma.artwork.deleteMany();
+
+  const artists = await prisma.artist.findMany();
+
+  const dataArtworksWithArtists = dataArtworks.map((artwork, index) => {
+    return {
+      ...artwork,
+      artistId: artists[index].id
+    }
+  })
+
+  console.log({ dataArtworksWithArtists })
 
   await prisma.artwork.createMany({
-    data: [
-      {
-        title: "An Example",
-        date: "2023-01-01",
-        medium: "Example Medium",
-        size: "10 x 10 x 10",
-      },
-      {
-        title: "Be An Example",
-        date: "2023-02-02",
-        medium: "Example Medium",
-        size: "20 x 20 x 20",
-      },
-      {
-        title: "Be An Example",
-        date: "2023-02-02",
-        medium: "Example Medium",
-        size: "20 x 20 x 20",
-      },
-    ],
+    data: dataArtworksWithArtists
   });
 }
 
