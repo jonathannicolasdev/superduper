@@ -57,20 +57,20 @@ export async function seedUsers() {
         title: "An Example",
         date: "2023-01-01",
         medium: "Example Medium",
-        size: "10 x 10 x 10"
+        size: "10 x 10 x 10",
       },
       {
         title: "Be An Example",
         date: "2023-02-02",
         medium: "Example Medium",
-        size: "20 x 20 x 20"
+        size: "20 x 20 x 20",
       },
       {
         title: "Be An Example",
         date: "2023-02-02",
         medium: "Example Medium",
-        size: "20 x 20 x 20"
-      }
+        size: "20 x 20 x 20",
+      },
     ],
   });
 }

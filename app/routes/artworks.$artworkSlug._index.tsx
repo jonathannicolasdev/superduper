@@ -3,7 +3,7 @@ import { useLoaderData } from "@remix-run/react";
 import { notFound } from "remix-utils";
 
 import { Balancer, Layout } from "~/components";
-import { createSitemap, formatDateOnly, invariant } from "~/utils";
+import { cn, createSitemap, formatDateOnly, invariant } from "~/utils";
 
 import type { LoaderArgs } from "@remix-run/node";
 import { prisma } from "~/libs";
@@ -13,7 +13,7 @@ export const handle = createSitemap();
 export async function loader({ request, params }: LoaderArgs) {
   invariant(params.artworkSlug, `artworkSlug not found`);
 
-  const slug = params.artworkSlug
+  const slug = params.artworkSlug;
 
   const artwork = await prisma.artwork.findFirst({
     where: { slug },
@@ -36,22 +36,27 @@ export default function Route() {
   return (
     <Layout isSpaced>
       <div className="flex justify-center">
-        <div className="max-w-4xl w-full">
-          <article className="prose-config mt-10 whitespace-pre-wrap">
+        <div className="w-full max-w-4xl">
+          <article
+            className={cn(
+              "mt-10 flex flex-wrap gap-4 whitespace-pre-wrap sm:gap-8",
+              "flex-col lg:flex-row"
+            )}
+          >
             <img
-              src="https://picsum.photos/seed/picsum/200/300"
+              src="https://picsum.photos/seed/picsum/500/600"
               alt={artwork.title}
+              className="object-contain"
             />
 
-            <h1>
-              <Balancer>{artwork.title}</Balancer>
-            </h1>
-
-            <time>{formatDateOnly(artwork.date)}</time>
-
-            <p>Medium: {artwork.medium}</p>
-
-            <p>Size: {artwork.size}</p>
+            <div className="prose-config">
+              <h1>
+                <Balancer>{artwork.title}</Balancer>
+              </h1>
+              <time>{formatDateOnly(artwork.date)}</time>
+              <p>Medium: {artwork.medium}</p>
+              <p>Size: {artwork.size}</p>
+            </div>
           </article>
         </div>
       </div>
