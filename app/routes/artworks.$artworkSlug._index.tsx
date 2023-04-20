@@ -17,6 +17,9 @@ export async function loader({ request, params }: LoaderArgs) {
 
   const artwork = await prisma.artwork.findFirst({
     where: { slug },
+    include: {
+      artist: true
+    }
   });
 
   if (!artwork) {
@@ -49,14 +52,19 @@ export default function Route() {
               className="object-contain"
             />
 
-            <div className="prose-config">
+            <aside className="prose-config">
               <h1>
                 <Balancer>{artwork.title}</Balancer>
               </h1>
               <time>{formatDateOnly(artwork.date)}</time>
               <p>Medium: {artwork.medium}</p>
               <p>Size: {artwork.size}</p>
-            </div>
+
+              <div>
+                <h3>{artwork.artist?.name}</h3>
+                <p>{artwork.artist?.bio}</p>
+              </div>
+            </aside>
           </article>
         </div>
       </div>

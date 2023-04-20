@@ -43,7 +43,7 @@ export default function ArtworksRoute() {
         </PageHeader>
       }
     >
-      <ul className="flex flex-wrap items-center">
+      <ul className="flex flex-wrap items-center gap-2 sm:gap-4">
         {artworks.map((artwork) => {
           return (
             <li key={artwork.id} className="max-w-[200px] space-y-2">
