@@ -71,7 +71,7 @@ export async function seedData() {
     }
   })
 
-  console.log({ dataArtworksWithArtists })
+  // console.info({ dataArtworksWithArtists })
 
   await prisma.artwork.createMany({
     data: dataArtworksWithArtists

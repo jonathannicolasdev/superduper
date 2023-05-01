@@ -24,6 +24,10 @@ export const formatDateOnly = (date: string | Date | undefined) => {
   const formatted = dayjs(date).locale("en").format("MMMM D, YYYY");
   return formatted;
 };
+export const formatYearOnly = (date: string | Date | undefined) => {
+  const formatted = dayjs(date).locale("en").format("YYYY");
+  return formatted;
+};
 
 export const formatDateId = (date: string | Date | undefined) => {
   const formatted = dayjs(date)

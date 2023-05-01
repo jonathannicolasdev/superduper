@@ -1,6 +1,8 @@
-import type { LinksFunction } from "@remix-run/node";
+import { json, LinksFunction } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
 
 import { Layout, PageHeader } from "~/components";
+import { prisma } from "~/libs";
 import { createDocumentLinks, createMetaData, createSitemap } from "~/utils";
 
 export const meta = createMetaData({
@@ -14,7 +16,19 @@ export const links: LinksFunction = () => {
   return createDocumentLinks({ canonicalPath: "/artists" });
 };
 
+export async function loader() {
+  const artists = await prisma.artist.findMany({
+    include: {
+      artworks: true,
+    },
+  });
+  return json({ artists });
+}
+
 export default function ArtistsRoute() {
+  const { artists } = useLoaderData<typeof loader>();
+
+
   return (
     <Layout
       isSpaced
@@ -24,7 +38,7 @@ export default function ArtistsRoute() {
         </PageHeader>
       }
     >
-      <p>Change something here.</p>
+      <pre>{JSON.stringify(artists, null, 2)}</pre>
     </Layout>
   );
 }

@@ -2,8 +2,8 @@ import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { notFound } from "remix-utils";
 
-import { Balancer, Layout } from "~/components";
-import { cn, createSitemap, formatDateOnly, invariant } from "~/utils";
+import { Balancer, Layout, RemixLink } from "~/components";
+import { cn, createSitemap, formatYearOnly, invariant } from "~/utils";
 
 import type { LoaderArgs } from "@remix-run/node";
 import { prisma } from "~/libs";
@@ -52,17 +52,19 @@ export default function Route() {
               className="object-contain"
             />
 
-            <aside className="prose-config">
-              <h1>
-                <Balancer>{artwork.title}</Balancer>
-              </h1>
-              <time>{formatDateOnly(artwork.date)}</time>
-              <p>Medium: {artwork.medium}</p>
-              <p>Size: {artwork.size}</p>
-
+            <aside className="space-y-8">
               <div>
-                <h3>{artwork.artist?.name}</h3>
-                <p>{artwork.artist?.bio}</p>
+                {artwork.artist && <RemixLink to={`/artists/${artwork.artist.slug}`} className="hover:underline">
+                  <span className="text-3xl">{artwork.artist.name}</span>
+                </RemixLink>}
+                <h1 className="text-3xl text-surface-400">
+                  <Balancer><i>{artwork.title}</i>,  <time>{formatYearOnly(artwork.date)}</time></Balancer>
+                </h1>
+              </div>
+
+              <div className="space-y-1">
+                <p>{artwork.medium}</p>
+                <p>{artwork.size}</p>
               </div>
             </aside>
           </article>
