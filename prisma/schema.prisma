@@ -27,12 +27,10 @@ model User {
   username String? @unique
   phone    String? @unique
 
-  password      UserPassword?
-  notifications UserNotification[]
-  roleId        String?
-  role          UserRole?          @relation(fields: [roleId], references: [id])
+  password UserPassword?
+  roleId   String?
+  role     UserRole?     @relation(fields: [roleId], references: [id])
 
-  notes    Note[]
   artworks Artwork[]
   Artist   Artist[]
 
@@ -64,41 +62,15 @@ model UserRole {
   description String?
 }
 
-model UserNotification {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  userId    String?
-  user      User?    @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-
-  title String
-  body  String
-
-  @@index([userId])
-}
-
-model Note {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  userId    String?
-  user      User?    @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-
-  title String
-  body  String
-
-  @@index([userId])
-}
-
 model Artwork {
   id        String   @id @default(cuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  userId    String?
-  user      User?    @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  artistId  String?
-  artist    Artist?  @relation(fields: [artistId], references: [id])
+  userId   String?
+  user     User?   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  artistId String?
+  artist   Artist? @relation(fields: [artistId], references: [id])
 
   title  String
   slug   String?
@@ -106,8 +78,23 @@ model Artwork {
   medium String // canvas, acrylic
   size   String // width, height, length
 
+  images ArtworkImage[]
+
   @@index([userId])
   @@index([artistId])
+}
+
+model ArtworkImage {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  url String
+
+  artwork   Artwork? @relation(fields: [artworkId], references: [id])
+  artworkId String?
+
+  @@index([artworkId])
 }
 
 model Artist {
@@ -123,5 +110,18 @@ model Artist {
 
   artworks Artwork[]
 
+  image         ArtistImage? @relation(fields: [imageId], references: [id])
+  imageId String?
+
   @@index([userId])
+  @@index([imageId])
+}
+
+model ArtistImage {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  url    String
+  artist Artist[]
 }
