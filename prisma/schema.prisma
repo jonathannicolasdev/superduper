@@ -31,8 +31,9 @@ model User {
   roleId   String?
   role     UserRole?     @relation(fields: [roleId], references: [id])
 
-  artworks Artwork[]
-  Artist   Artist[]
+  artworks    Artwork[]
+  artists     Artist[]
+  exhibitions Exhibition[]
 
   @@index([roleId])
 }
@@ -72,16 +73,21 @@ model Artwork {
   artistId String?
   artist   Artist? @relation(fields: [artistId], references: [id])
 
-  title  String
-  slug   String?
-  date   DateTime
-  medium String // canvas, acrylic
-  size   String // width, height, length
+  title       String
+  slug        String?
+  date        DateTime
+  medium      String // canvas, acrylic
+  size        String // width, height, length
+  description String?
 
   images ArtworkImage[]
 
+  exhibition   Exhibition? @relation(fields: [exhibitionId], references: [id])
+  exhibitionId String?
+
   @@index([userId])
   @@index([artistId])
+  @@index([exhibitionId])
 }
 
 model ArtworkImage {
@@ -110,11 +116,13 @@ model Artist {
 
   artworks Artwork[]
 
-  image         ArtistImage? @relation(fields: [imageId], references: [id])
-  imageId String?
+  image ArtistImage?
+
+  exhibition   Exhibition? @relation(fields: [exhibitionId], references: [id])
+  exhibitionId String?
 
   @@index([userId])
-  @@index([imageId])
+  @@index([exhibitionId])
 }
 
 model ArtistImage {
@@ -122,6 +130,43 @@ model ArtistImage {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  url    String
-  artist Artist[]
+  url String
+
+  artist   Artist? @relation(fields: [artistId], references: [id])
+  artistId String? @unique
+
+  @@index([artistId])
+}
+
+model Exhibition {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  title       String
+  slug        String?
+  date        DateTime?
+  description String?
+
+  images   ExhibitionImage[]
+  artists  Artist[]
+  artworks Artwork[]
+
+  userId String?
+  user   User?   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+
+  @@index([userId])
+}
+
+model ExhibitionImage {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  url String
+
+  exhibition   Exhibition? @relation(fields: [exhibitionId], references: [id])
+  exhibitionId String?
+
+  @@index([exhibitionId])
 }

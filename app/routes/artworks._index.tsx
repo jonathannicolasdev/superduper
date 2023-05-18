@@ -26,6 +26,7 @@ export async function loader() {
   const artworks = await prisma.artwork.findMany({
     include: {
       artist: true,
+      images: true,
     },
   });
   return json({ artworks });

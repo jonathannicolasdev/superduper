@@ -21,6 +21,7 @@
     "prisma:push:seed": "prisma db push && prisma db seed",
     "prisma:seed": "prisma db seed",
     "prisma:reset": "prisma db push --force-reset",
+    "prisma:validate": "prisma validate",
     "check": "run-p check:*",
     "check:types": "tsc --noEmit",
     "check:lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
