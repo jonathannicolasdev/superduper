@@ -48,23 +48,16 @@ export default function ArtworksRoute() {
         {artworks.map((artwork) => {
           return (
             <li key={artwork.id} className="max-w-[200px] space-y-2">
-              {artwork?.images?.length > 0 && <RemixLink to={`/artworks/${artwork?.slug}`}>
-                <img
-                  src={artwork?.images[0]?.url}
-                  alt={artwork.title}
-                />
-              </RemixLink>}
-
-              <h3>{artwork.title}</h3>
-              {artwork.artist?.name && <h4>{artwork.artist.name}</h4>}
-              <time>{formatDateOnly(artwork.date)}</time>
-              <ButtonLink
-                to={`/artworks/${artwork?.slug}`}
-                variant="outline"
-                className="after:content-['_↗']"
-              >
-                Details
-              </ButtonLink>
+              <RemixLink to={`/artworks/${artwork?.slug}`}>
+                {artwork?.images?.length > 0 &&
+                  <img
+                    src={artwork?.images[0]?.url}
+                    alt={artwork.title}
+                  />}
+                <h3>{artwork.title}</h3>
+                {artwork.artist?.name && <h4>{artwork.artist.name}</h4>}
+                <time>{formatDateOnly(artwork.date)}</time>
+              </RemixLink>
             </li>
           );
         })}
