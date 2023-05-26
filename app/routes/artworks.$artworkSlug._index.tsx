@@ -47,11 +47,11 @@ export default function Route() {
               "flex-col lg:flex-row"
             )}
           >
-            <img
-              src={artwork?.images[0].url}
+            {artwork?.images?.length > 0 && <img
+              src={artwork?.images[0]?.url}
               alt={artwork.title}
               className="object-contain max-w-2xl"
-            />
+            />}
 
             <aside className="space-y-8">
               <div>
