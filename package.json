@@ -30,7 +30,7 @@
     "prettier:check": "prettier --check \"**/*.{ts,tsx,mdx,json}\" --cache",
     "prettier": "prettier --write \"**/*.{ts,tsx,mdx,json}\" --cache",
     "clean": "rm -rf build public/build",
-    "postinstall": "nr clean && nr prisma:generate"
+    "postinstall": "prisma generate"
   },
   "engines": {
     "node": ">=14"
