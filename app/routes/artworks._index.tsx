@@ -2,7 +2,7 @@ import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
 
-import { ButtonLink, Layout, PageHeader } from "~/components";
+import { ButtonLink, Layout, PageHeader, RemixLink } from "~/components";
 import { prisma } from "~/libs";
 import {
   createDocumentLinks,
@@ -13,7 +13,7 @@ import {
 
 export const meta = createMetaData({
   title: "Artworks",
-  description: "Some description.",
+  description: "The best artworks by Super Duper Gallery.",
 });
 
 export const handle = createSitemap("/artworks", 0.9);
@@ -48,10 +48,12 @@ export default function ArtworksRoute() {
         {artworks.map((artwork) => {
           return (
             <li key={artwork.id} className="max-w-[200px] space-y-2">
-              {artwork?.images?.length > 0 && <img
-                src={artwork?.images[0]?.url}
-                alt={artwork.title}
-              />}
+              {artwork?.images?.length > 0 && <RemixLink to={`/artworks/${artwork?.slug}`}>
+                <img
+                  src={artwork?.images[0]?.url}
+                  alt={artwork.title}
+                />
+              </RemixLink>}
 
               <h3>{artwork.title}</h3>
               {artwork.artist?.name && <h4>{artwork.artist.name}</h4>}
