@@ -114,15 +114,11 @@ model Artist {
   name String
   bio  String
 
-  artworks Artwork[]
-
-  image ArtistImage?
-
-  exhibition   Exhibition? @relation(fields: [exhibitionId], references: [id])
-  exhibitionId String?
+  image       ArtistImage?
+  artworks    Artwork[]
+  exhibitions Exhibition[]
 
   @@index([userId])
-  @@index([exhibitionId])
 }
 
 model ArtistImage {
@@ -152,8 +148,8 @@ model Exhibition {
   artists  Artist[]
   artworks Artwork[]
 
-  userId String?
   user   User?   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userId String?
 
   @@index([userId])
 }
