@@ -9,8 +9,8 @@
   "private": true,
   "sideEffects": false,
   "scripts": {
-    "build": "remix build",
-    "dev": "remix dev",
+    "build": "prisma db push && remix build",
+    "dev": "prisma generate && remix dev",
     "typecheck": "tsc",
     "tailwind:view": "tailwind-config-viewer -p 7000 -o",
     "prisma:studio": "prisma studio",

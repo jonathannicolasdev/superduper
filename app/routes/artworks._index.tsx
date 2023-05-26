@@ -1,6 +1,6 @@
-import type { LinksFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
+import type { LinksFunction } from "@remix-run/node";
 
 import { ButtonLink, Layout, PageHeader } from "~/components";
 import { prisma } from "~/libs";
@@ -49,7 +49,7 @@ export default function ArtworksRoute() {
           return (
             <li key={artwork.id} className="max-w-[200px] space-y-2">
               <img
-                src="https://picsum.photos/seed/picsum/200/300"
+                src={artwork?.images[0].url}
                 alt={artwork.title}
               />
 
