@@ -18,7 +18,8 @@ export async function loader({ request, params }: LoaderArgs) {
   const artwork = await prisma.artwork.findFirst({
     where: { slug },
     include: {
-      artist: true
+      artist: true,
+      images: true,
     }
   });
 
@@ -39,7 +40,7 @@ export default function Route() {
   return (
     <Layout isSpaced>
       <div className="flex justify-center">
-        <div className="w-full max-w-4xl">
+        <div className="w-full max-w-5xl">
           <article
             className={cn(
               "mt-10 flex flex-wrap gap-4 whitespace-pre-wrap sm:gap-8",
@@ -47,9 +48,9 @@ export default function Route() {
             )}
           >
             <img
-              src="https://picsum.photos/seed/picsum/500/600"
+              src={artwork?.images[0].url}
               alt={artwork.title}
-              className="object-contain"
+              className="object-contain max-w-2xl"
             />
 
             <aside className="space-y-8">
