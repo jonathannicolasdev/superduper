@@ -142,7 +142,7 @@ model Exhibition {
   title       String
   slug        String?
   date        DateTime?
-  description String?
+  description String? @db.Text
 
   images   ExhibitionImage[]
   artists  Artist[]
