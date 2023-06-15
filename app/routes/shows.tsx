@@ -25,7 +25,7 @@ export async function loader() {
   });
   return json({ exhibitions });
 }
-
+sdfihsiudhf
 export default function ShowsRoute() {
   const { exhibitions } = useLoaderData<typeof loader>();
   return (
