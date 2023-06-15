@@ -8,6 +8,7 @@ import { dataUserRoles } from "~/data";
 import { prisma } from "~/libs";
 import { dataArtists } from "./data/artists";
 import { dataArtworks } from "./data/artworks";
+import { dataExhibitions } from "./data/exhibitions";
 
 async function seed() {
   await seedData();
@@ -71,10 +72,16 @@ export async function seedData() {
     }
   })
 
-  // console.info({ dataArtworksWithArtists })
-
   await prisma.artwork.createMany({
     data: dataArtworksWithArtists
+  }); 
+  
+  // ---------------------------------------------------------------------------
+  console.info("🎨 Seed exhibitions...");
+  await prisma.exhibition.deleteMany();
+
+  await prisma.exhibition.createMany({
+    data: dataExhibitions
   });
 }
 
