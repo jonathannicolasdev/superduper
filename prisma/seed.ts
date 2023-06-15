@@ -11,7 +11,10 @@ import { dataArtworks } from "./data/artworks";
 import { dataExhibitions } from "./data/exhibitions";
 
 async function seed() {
-  await seedData();
+  // await seedUsers();
+  // await seedArtists();
+  // await seedArtworks();
+  await seedExhibitions();
 }
 
 /**
@@ -20,7 +23,7 @@ async function seed() {
  * -----------------------------------------------------------------------------
  */
 
-export async function seedData() {
+export async function seedUsers() {
   // ---------------------------------------------------------------------------
   console.info("Seed user roles...");
   await prisma.userRole.deleteMany();
@@ -50,16 +53,17 @@ export async function seedData() {
       roleId: adminUserRole?.id,
     },
   });
+}
 
-  // ---------------------------------------------------------------------------
+export async function seedArtists() {
   console.info("🎨 Seed artists...");
   await prisma.artist.deleteMany();
-
   await prisma.artist.createMany({
-    data: dataArtists
+    data: dataArtists,
   });
+}
 
-  // ---------------------------------------------------------------------------
+export async function seedArtworks() {
   console.info("🎨 Seed artworks...");
   await prisma.artwork.deleteMany();
 
@@ -68,20 +72,20 @@ export async function seedData() {
   const dataArtworksWithArtists = dataArtworks.map((artwork, index) => {
     return {
       ...artwork,
-      artistId: artists[index].id
-    }
-  })
+      artistId: artists[index].id,
+    };
+  });
 
   await prisma.artwork.createMany({
-    data: dataArtworksWithArtists
-  }); 
-  
-  // ---------------------------------------------------------------------------
+    data: dataArtworksWithArtists,
+  });
+}
+
+export async function seedExhibitions() {
   console.info("🎨 Seed exhibitions...");
   await prisma.exhibition.deleteMany();
-
   await prisma.exhibition.createMany({
-    data: dataExhibitions
+    data: dataExhibitions,
   });
 }
 
