@@ -7,7 +7,7 @@ import {
   Svg3DSelectFace,
   Artworks,
   Artists,
-  Shows,
+  Exhibitions,
 } from "~/icons";
 
 /**
@@ -27,8 +27,8 @@ export const iconMaps = {
 
   artworks: <Artworks />,
   artists: <Artists />,
-  shows: <Shows />,
-  exhibitions: <Shows />,
+  exhibitions: <Exhibitions />,
+  exhibitions: <Exhibitions />,
 };
 
 export function lookupIcon(lookupObject: any, defaultCase = "default") {

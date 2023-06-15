@@ -50,7 +50,7 @@ export {
   Instagram,
   FileImage as Artworks,
   PersonStanding as Artists,
-  PartyPopper as Shows,
+  PartyPopper as Exhibitions,
   X,
 } from "lucide-react";
 export type { Icon as LucideIcon, LucideProps } from "lucide-react";

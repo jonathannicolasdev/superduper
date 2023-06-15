@@ -26,7 +26,7 @@ export async function loader() {
   return json({ exhibitions });
 }
 
-export default function ShowsRoute() {
+export default function ExhibitionsRoute() {
   const { exhibitions } = useLoaderData<typeof loader>();
   return (
     <Layout

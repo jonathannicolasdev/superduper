@@ -33,7 +33,7 @@ export const configSite = {
     { to: "/about", title: "About", icon: "about" },
     { to: "/artworks", title: "Artworks", icon: "artworks" },
     { to: "/artists", title: "Artists", icon: "artists" },
-    { to: "/shows", title: "Shows", icon: "shows" },
+    { to: "/exhibitions", title: "Exhibitions", icon: "exhibitions" },
     { to: "/examples", title: "Examples", icon: "examples" },
   ],
 };
