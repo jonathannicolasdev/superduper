@@ -1,4 +1,4 @@
-import type { LinksFunction} from "@remix-run/node";
+import type { LinksFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 
@@ -36,26 +36,21 @@ export default function ExhibitionsRoute() {
         </PageHeader>
       }
     >
-    <ul className="flex flex-wrap items-center gap-2 sm:gap-4">
-    {
-      exhibitions.map((exhibition) => {
-        return (
-          <li key={exhibition.id} className="max-w-[200px] space-y-2">
-            <RemixLink to={`/exhibitions/${exhibition?.slug}`}>
-              {
-                exhibition?.images?.length > 0 &&
-                <img src={exhibition?.images[0].url} alt={exhibition.title} />
-              }
-              <h3>{exhibition.title}</h3>
-              <p>
-                {exhibition.description}
-              </p>
-              <time>{exhibition.date}</time>
-            </RemixLink>
-          </li>
-        );
-      })}
-    </ul>  
+      <ul className="flex flex-wrap items-center gap-2 sm:gap-4">
+        {exhibitions.map((exhibition) => {
+          return (
+            <li key={exhibition.id} className="max-w-[200px] space-y-2">
+              <RemixLink to={`/exhibitions/${exhibition?.slug}`}>
+                {exhibition?.images?.length > 0 && (
+                  <img src={exhibition?.images[0].url} alt={exhibition.title} />
+                )}
+                <h3>{exhibition.title}</h3>
+                <time>{exhibition.date}</time>
+              </RemixLink>
+            </li>
+          );
+        })}
+      </ul>
     </Layout>
   );
 }

@@ -95,7 +95,7 @@ model ArtworkImage {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  url String
+  url String @db.Text
 
   artwork   Artwork? @relation(fields: [artworkId], references: [id])
   artworkId String?
@@ -126,7 +126,7 @@ model ArtistImage {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  url String
+  url String @db.Text
 
   artist   Artist? @relation(fields: [artistId], references: [id])
   artistId String? @unique
@@ -142,7 +142,7 @@ model Exhibition {
   title       String
   slug        String?
   date        DateTime?
-  description String? @db.Text
+  description String?   @db.Text
 
   images   ExhibitionImage[]
   artists  Artist[]
@@ -159,7 +159,7 @@ model ExhibitionImage {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  url String
+  url String @db.Text
 
   exhibition   Exhibition? @relation(fields: [exhibitionId], references: [id])
   exhibitionId String?
