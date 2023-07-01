@@ -28,7 +28,6 @@ export const iconMaps = {
   artworks: <Artworks />,
   artists: <Artists />,
   exhibitions: <Exhibitions />,
-  exhibitions: <Exhibitions />,
 };
 
 export function lookupIcon(lookupObject: any, defaultCase = "default") {
