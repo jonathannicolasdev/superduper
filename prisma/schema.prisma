@@ -64,7 +64,14 @@ model UserRole {
 }
 
 model Artwork {
-  id        String   @id @default(cuid())
+  id     String         @id @default(cuid())
+  title  String
+  slug   String?
+  year   Int?
+  medium String // canvas, acrylic
+  size   String // width, height, length
+  images ArtworkImage[]
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -72,15 +79,6 @@ model Artwork {
   user     User?   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   artistId String?
   artist   Artist? @relation(fields: [artistId], references: [id])
-
-  title       String
-  slug        String?
-  date        DateTime
-  medium      String // canvas, acrylic
-  size        String // width, height, length
-  description String?
-
-  images ArtworkImage[]
 
   exhibition   Exhibition? @relation(fields: [exhibitionId], references: [id])
   exhibitionId String?
@@ -112,7 +110,7 @@ model Artist {
 
   slug String?
   name String
-  bio  String
+  bio  String  @db.Text
 
   image       ArtistImage?
   artworks    Artwork[]
