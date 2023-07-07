@@ -40,14 +40,15 @@ export default function IndexRoute() {
     <Layout>
       <section
         data-id="landing-hero"
-        className="mx-auto flex max-w-max flex-wrap items-center justify-center gap-4 py-10 lg:justify-between lg:py-20"
+        className="mx-auto flex max-w-max flex-wrap items-center justify-center gap-4 space-y-10 py-10 lg:justify-between lg:py-20"
       >
+        <div className="w-full space-y-4 text-center">
+          <h1>Super Duper Gallery</h1>
+          <p>Super Duper Gallery Offers a Portal Further Beyond</p>
+          <p>Contemporary Art Gallery based in 🇵🇭 QC, Philippines</p>
+        </div>
+
         <div className="space-y-4 text-center">
-          <div className="prose-config sm:prose-xl">
-            <h1>Super Duper Gallery</h1>
-            <p>Super Duper Gallery Offers a Portal Further Beyond</p>
-            <p>Contemporary Art Gallery based in 🇵🇭 QC, Philippines</p>
-          </div>
           <h2>{exhibition.title}</h2>
           <ul className="flex flex-wrap items-center justify-between gap-4 sm:gap-5">
             {exhibition.artworks.map((artwork) => (
