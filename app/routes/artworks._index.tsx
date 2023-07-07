@@ -49,14 +49,12 @@ export default function ArtworksRoute() {
           return (
             <li key={artwork.id} className="max-w-[200px] space-y-2">
               <RemixLink to={`/artworks/${artwork?.slug}`}>
-                {artwork?.images?.length > 0 &&
-                  <img
-                    src={artwork?.images[0]?.url}
-                    alt={artwork.title}
-                  />}
+                {artwork?.images?.length > 0 && (
+                  <img src={artwork?.images[0]?.url} alt={artwork.title} />
+                )}
                 <h3>{artwork.title}</h3>
                 {artwork.artist?.name && <h4>{artwork.artist.name}</h4>}
-                <time>{formatDateOnly(artwork.date)}</time>
+                <time>{artwork.year}</time>
               </RemixLink>
             </li>
           );
