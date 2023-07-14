@@ -16,7 +16,7 @@ export const handle = createSitemap("/", 1);
 
 export async function loader() {
   const currentDate = new Date();
-  const exhibition = await prisma.exhibition.findFirst({
+  const latestExhibition = await prisma.exhibition.findFirst({
     include: {
       artworks: {
         include: {
@@ -34,14 +34,33 @@ export async function loader() {
       },
     },
   });
-  if (!exhibition) {
+  if (!latestExhibition) {
     throw notFound("Exhibition not found");
   }
-  return json({ exhibition });
+  const upcomingExhibitions = await prisma.exhibition.findMany({
+    include: {
+      artworks: {
+        include: {
+          images: true,
+          artist: true,
+        },
+      },
+    },
+    orderBy: {
+      date: "desc",
+    },
+    where: {
+      date: {
+        gte: currentDate,
+      },
+    },
+  });
+  return json({ latestExhibition, upcomingExhibitions });
 }
 
 export default function IndexRoute() {
-  const { exhibition } = useLoaderData<typeof loader>();
+  const { latestExhibition, upcomingExhibitions } =
+    useLoaderData<typeof loader>();
   return (
     <Layout>
       <section
@@ -55,10 +74,12 @@ export default function IndexRoute() {
         </div>
 
         <div className="space-y-4 text-center">
-          <h2>{exhibition.title}</h2>
-          {exhibition?.date && <time>{formatDateOnly(exhibition?.date)}</time>}
+          <h2>{latestExhibition.title}</h2>
+          {latestExhibition?.date && (
+            <time>{formatDateOnly(latestExhibition?.date)}</time>
+          )}
           <ul className="flex flex-wrap items-center justify-between gap-4 sm:gap-5">
-            {exhibition.artworks.map((artwork) => (
+            {latestExhibition.artworks.map((artwork) => (
               <li key={artwork.id} className="max-w-sm space-y-2">
                 <RemixLink to={`/artworks/${artwork?.slug}`}>
                   {artwork?.images?.length > 0 && (
@@ -90,6 +111,15 @@ export default function IndexRoute() {
       </section>
       <section>
         <h2>Upcoming Exhibitions</h2>
+        <ul>
+          {upcomingExhibitions.map((exhibition) => {
+            return (
+              <li key={exhibition.id}>
+                <h4>{exhibition.title}</h4>
+              </li>
+            );
+          })}
+        </ul>
       </section>
     </Layout>
   );
