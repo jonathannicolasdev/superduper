@@ -39,12 +39,7 @@ export async function loader() {
   }
   const upcomingExhibitions = await prisma.exhibition.findMany({
     include: {
-      artworks: {
-        include: {
-          images: true,
-          artist: true,
-        },
-      },
+      images: true,
     },
     orderBy: {
       date: "desc",
@@ -116,6 +111,11 @@ export default function IndexRoute() {
             return (
               <li key={exhibition.id}>
                 <h4>{exhibition.title}</h4>
+                <img
+                  src={exhibition.images[0].url}
+                  alt={exhibition.title}
+                  className="w-60"
+                />
               </li>
             );
           })}
