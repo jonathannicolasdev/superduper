@@ -50,6 +50,7 @@ export default function IndexRoute() {
 
         <div className="space-y-4 text-center">
           <h2>{exhibition.title}</h2>
+          {exhibition?.date && <time>{formatDateOnly(exhibition?.date)}</time>}
           <ul className="flex flex-wrap items-center justify-between gap-4 sm:gap-5">
             {exhibition.artworks.map((artwork) => (
               <li key={artwork.id} className="max-w-sm space-y-2">
