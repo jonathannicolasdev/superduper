@@ -15,6 +15,7 @@ export const links: LinksFunction = () => {
 export const handle = createSitemap("/", 1);
 
 export async function loader() {
+  const currentDate = new Date();
   const exhibition = await prisma.exhibition.findFirst({
     include: {
       artworks: {
@@ -26,6 +27,11 @@ export async function loader() {
     },
     orderBy: {
       date: "desc",
+    },
+    where: {
+      date: {
+        lt: currentDate,
+      },
     },
   });
   if (!exhibition) {
@@ -81,6 +87,9 @@ export default function IndexRoute() {
             </ButtonAnchor>
           </div>
         </div>
+      </section>
+      <section>
+        <h2>Upcoming Exhibitions</h2>
       </section>
     </Layout>
   );
