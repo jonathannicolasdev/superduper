@@ -1,6 +1,6 @@
 import { ButtonAnchor, ButtonLink, Layout, RemixLink } from "~/components";
 import { configSite } from "~/configs";
-import { Artworks, Exhibitions, Instagram } from "~/icons";
+import { Artworks, Instagram } from "~/icons";
 import { createDocumentLinks, createSitemap, formatDateOnly } from "~/utils";
 
 import { json, type LinksFunction } from "@remix-run/node";
@@ -18,6 +18,7 @@ export async function loader() {
   const currentDate = new Date();
   const latestExhibition = await prisma.exhibition.findFirst({
     include: {
+      images: true,
       artworks: {
         include: {
           images: true,
@@ -72,6 +73,13 @@ export default function IndexRoute() {
           <h2>{latestExhibition.title}</h2>
           {latestExhibition?.date && (
             <time>{formatDateOnly(latestExhibition?.date)}</time>
+          )}
+          {latestExhibition.artworks.length <= 0 && (
+            <img
+              src={latestExhibition.images[0].url}
+              alt={latestExhibition.title}
+              className="w-60"
+            />
           )}
           <ul className="flex flex-wrap items-center justify-between gap-4 sm:gap-5">
             {latestExhibition.artworks.map((artwork) => (
