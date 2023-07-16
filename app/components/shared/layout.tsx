@@ -1,6 +1,6 @@
 import { cva } from "class-variance-authority";
 
-import { SiteHeader, SiteFooter } from "~/components";
+import { SiteHeaderNew, SiteFooter } from "~/components";
 import { cn } from "~/utils";
 
 import type { VariantProps } from "class-variance-authority";
@@ -40,7 +40,7 @@ export function Layout({
 }: Props) {
   return (
     <div className={cn("flex min-h-screen flex-col")}>
-      <SiteHeader noThemeToggle={noThemeToggle} />
+      <SiteHeaderNew />
 
       {/* Custom header */}
       {pageHeader}

@@ -7,6 +7,7 @@
     "esbenp.prettier-vscode",
     "moalamri.inline-fold",
     "prisma.prisma",
-    "yzhang.markdown-all-in-one"
+    "yzhang.markdown-all-in-one",
+    "codeforge.remix-forge"
   ]
 }

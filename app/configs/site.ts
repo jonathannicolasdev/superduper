@@ -29,12 +29,11 @@ export const configSite = {
   },
 
   mainNavItems: [
-    { to: "/", title: "Home", icon: "home" },
     { to: "/about", title: "About", icon: "about" },
     { to: "/artworks", title: "Artworks", icon: "artworks" },
     { to: "/artists", title: "Artists", icon: "artists" },
     { to: "/exhibitions", title: "Exhibitions", icon: "exhibitions" },
-    { to: "/examples", title: "Examples", icon: "examples" },
+    { to: "/contact", title: "Contact", icon: "contact" },
   ],
 };
 
