@@ -5,7 +5,7 @@ import { configSite } from "~/configs";
 export function SiteHeaderNew() {
   return (
     <header className="p-4">
-      <div className="flex flex-wrap justify-between border-4 border-white md:flex-nowrap">
+      <div className="flex flex-wrap justify-between border-4 border-white lg:flex-nowrap">
         <div className="border-r-4 border-white p-2">
           <Link to="/" className="flex gap-2">
             <img
@@ -25,7 +25,7 @@ export function SiteHeaderNew() {
           <p>Contemporary Art Gallery based in 🇵🇭 QC, Philippines</p>
         </div>
 
-        <nav className="flex w-full items-center justify-center border-t-4 border-white px-10 py-4 sm:border-l-4">
+        <nav className="flex items-center justify-center border-t-4 border-white px-10 py-4 md:border-l-4 md:border-t-0">
           <ul className="flex flex-wrap gap-4">
             {configSite?.mainNavItems.map((navItem) => {
               return (
