@@ -1,6 +1,6 @@
 import { ButtonAnchor, ButtonLink, Layout, RemixLink } from "~/components";
 import { configSite } from "~/configs";
-import { Artworks, Instagram } from "~/icons";
+import { Artworks, Exhibitions, Instagram } from "~/icons";
 import { createDocumentLinks, createSitemap, formatDateOnly } from "~/utils";
 
 import { json, type LinksFunction } from "@remix-run/node";
@@ -104,8 +104,12 @@ export default function IndexRoute() {
           </div>
         </div>
       </section>
-      <section>
+      <section className="space-y-4">
         <h2>Upcoming Exhibitions</h2>
+
+        {upcomingExhibitions.length <= 0 && (
+          <p>Sorry there is no upcoming exhibitions</p>
+        )}
         <ul>
           {upcomingExhibitions.map((exhibition) => {
             return (
